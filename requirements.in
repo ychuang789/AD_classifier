@@ -1,5 +1,6 @@
 click
 pandas
+pip-tools
 PyMySQL
 sentencepiece
 sklearn
