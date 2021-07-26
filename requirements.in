@@ -1,0 +1,8 @@
+click
+pandas
+PyMySQL
+sentencepiece
+sklearn
+torch
+tqdm
+transformers
