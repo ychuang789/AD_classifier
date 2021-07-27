@@ -1,11 +1,14 @@
 import torch
 import logging
+
+import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from transformers import logging as hf_logging
 from typing import Dict
+
 
 from train.model import ADClassifier
 from train.predict import single_prediction
@@ -20,21 +23,27 @@ app = FastAPI(title="AD classifier API", description="A simple API using fine-tu
 # app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # templates = Jinja2Templates(directory="templates")
+@app.get('/')
+def index():
+    return {'message': 'This is the homepage of the API '}
 
 
-@app.get("/predict")
-def predict_content(content: str):
+@app.post("/predict")
+def predict_content( content: str):
     """
     A simple function that receive a text content and predict if it is AD article.
     input param: content
     return: prediction, probabilities
     """
+    score, label = single_prediction(model, content)
+    prediction = {0:'negative', 1:'positive'}
+    result = {'prediction': prediction[label], 'probability': score}
+    return result
 
-    try:
-        score, label = single_prediction(model, content)
-        prediction = {0:'negative', 1:'positive'}
-        result = {'prediction': prediction[label], 'probability': score}
-        return result
-    except:
-        logging.ERROR('There is something wrong while running the app')
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', debug=True)
+
+
+
+
 
