@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Advertisement Classifier</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Advertisement Classifier</h1>
+    <div style="text-align: center">Hint: Input string and return the result (label & probability)</div>
+    <div class="form" style="text-align: center">
+        <form method="POST">
+            <input type="text" placeholder="please type the content here..." name="content" id="content">
+            <input type="submit" value="Calculate">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+
+    {% if "negative" in result %}
+    <div style="text-align: center">
+        <div>Label: <span style="color:#E73017">{{ result }}</span> Score: <span style="color:#E73017">{{ probability }}</span></div>
+    </div>
+
+    {% elif "positive" in result %}
+    <div style="text-align: center">
+        <div>Label: <span style="color:#14B120">{{ result }} </span> Score: <span style="color:#14B120">{{ probability }}</span></div>
+    </div>
+
+    {% else %}
+    <div style="text-align: center">{{ result }}</div>
+    {% endif %}
+</div>
+{% endblock %}

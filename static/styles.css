@@ -1,3 +1,20 @@
-h1 {
-    color: green;
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #DAF3F4 ;
+}
+
+
+.content {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#content {
+    width: 50%;
 }
