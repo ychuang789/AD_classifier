@@ -30,7 +30,7 @@ def get_predictions(model, data_loader):
 
 
 def single_prediction(model, sentence):
-    tokenizer = AlbertTokenizer.from_pretrained('albert-base-v2')
+    tokenizer = AlbertTokenizer.from_pretrained('./model/tokenizer/')
     model.load_state_dict(torch.load('best_model_state.bin'))
     encoding = tokenizer.encode_plus(sentence,
           add_special_tokens=True,

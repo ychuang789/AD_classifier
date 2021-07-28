@@ -1,3 +1,4 @@
+import argparse
 import torch
 import logging
 from torch import nn
@@ -9,13 +10,28 @@ from train.metrics import evalute_metrics
 from train.model import ADClassifier
 from train.train import train_epoch
 
+parser = argparse.ArgumentParser()
+parser.add_argument('run_number', type=int, help= 'run number')
+parser.add_argument('--device',default= torch.device("cuda:0" if torch.cuda.is_available() else "cpu"),
+                    help= 'gpu number or cpu')
+parser.add_argument('--n_classes', default= 2, help= 'number of class')
+parser.add_argument('--max_len', type= int, default= 1000, help= 'max length')
+parser.add_argument('--batch_size', type= int, default= 16, help= 'batch size')
+parser.add_argument('--epochs', type= int, default= 10, help= 'Number of epochs')
+parser.add_argument('--learning_rate', type= int ,default= 1e-5)
+parser.add_argument('--num_warmup_steps', type= int, default= 0)
+parser.add_argument('--loss_func', default= nn.CrossEntropyLoss())
+
+
+args = parser.parse_args()
+
 hf_logging.set_verbosity_error()
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',level=logging.INFO)
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-model = ADClassifier(len(['0', '1'])).to(device)
+device = args.device
+model = ADClassifier(args.n_classes).to(device)
 
-train_df, test_df, train_data_loader, test_data_loader = build_dataset_object('data.pkl', MAX_LEN = 300, BATCH_SIZE = 16)
+train_df, test_df, train_data_loader, test_data_loader = build_dataset_object('data.pkl', )
 
 EPOCHS = 10
 optimizer = AdamW(model.parameters(), lr=1e-5, correct_bias=False)
@@ -51,8 +67,8 @@ for epoch in range(EPOCHS):
     history['val_acc'].append(val_acc)
     history['val_loss'].append(val_loss)
     if val_acc > best_accuracy:
-        torch.save(model.state_dict(), 'best_model_state.bin')
+        torch.save(model.state_dict(), './model/best_model_state.bin')
         best_accuracy = val_acc
 
 
-evalute_metrics(model, test_data_loader)
+    evalute_metrics(model, test_data_loader)

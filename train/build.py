@@ -67,13 +67,12 @@ def create_data_loader(df, tokenizer, max_len, batch_size):
         )
 
 
-def build_dataset_object(filename, MAX_LEN = 300, BATCH_SIZE = 16):
+def build_dataset_object(filename, MAX_LEN, BATCH_SIZE):
     train_df, test_df = read_data(filename)
     tokenizer = AlbertTokenizer.from_pretrained('albert-base-v2')
-
     train_data_loader = create_data_loader(train_df, tokenizer, MAX_LEN, BATCH_SIZE)
     test_data_loader = create_data_loader(test_df, tokenizer, MAX_LEN, BATCH_SIZE)
-
+    tokenizer.save_pretrained("./model/tokenizer/")
     return train_df, test_df, train_data_loader, test_data_loader
 
 
