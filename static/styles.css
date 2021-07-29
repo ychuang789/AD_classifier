@@ -1,9 +1,35 @@
 body, html {
     margin: 0;
-    font-family: sans-serif;
-    background-color: #DAF3F4 ;
+    font-family: monospace;
+    font-size: 16px;
+    background-color: #DAF3F4;
 }
 
+h1 {
+    font-family: monospace;
+}
+
+div.msg {
+    font-size: 20px;
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
 
 .content {
     margin: 0 auto;
@@ -15,6 +41,10 @@ body, html {
     margin-bottom: 20px;
 }
 
-#content {
-    width: 50%;
+input {
+    font-family: monospace;
+}
+
+input[name="number"] {
+    width: 30%;
 }

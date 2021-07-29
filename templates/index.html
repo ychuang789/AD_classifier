@@ -10,34 +10,39 @@
     <div style="text-align: center">Hint: Input string and return the result (label & probability)</div>
     <div class="form" style="text-align: center">
         <form method="POST">
-            <input type="text" placeholder="please type here and change line to add multiple contents..." name="content" id="content" style="height:120px; width:200px;">
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
-        </form>
-        <form>
-            <input type="text" placeholder="The number of contents..." name="number" id="number">
+            <textarea name="content" style="width:600px;height:300px;" placeholder="type the content here, change line if you want to add new content..."></textarea>
+            <br>
+            <input type="text" placeholder="The number of contents..." name="number" id="number" autocomplete="off">
             <input type="submit" value="Submit">
             <input type="reset" value="Reset">
         </form>
     </div>
 
-    {{% for item in results %}}
-
-        {% if "negative" in item.result.0 %}
-        <div style="text-align: center">
-            <div>Id: <span>item.id</span>Label: <span style="color:#E73017">{{ item.result.0 }}</span>Score: <span style="color:#E73017">{{ item.result.1 }}</span></div>
-        </div>
-
-        {% elif "positive" in item.result.0 %}
-        <div style="text-align: center">
-            <div>Id: <span>item.id</span>Label: <span style="color:#14B120">{{ item.result.0 }}</span>Score: <span style="color:#14B120">{{ item.result.1 }}</span></div>
-        </div>
-
-        {% else %}
-        <div style="text-align: center">{{ result }}</div>
-        {% endif %}
-
-    {% endfor %}
-
+    {% if results is string %}
+        <b><div class="msg" style="text-align: center">{{ results }}</div></b>
+    {% else %}
+    <table>
+        <tr>
+            <th bgcolor="#c9c9c9">Id</th>
+            <th bgcolor="#c9c9c9">Label</th>
+            <th bgcolor="#c9c9c9">Probability</th>
+        </tr>
+        {% for item in results %}
+            {% if "negative" in item.result.0 %}
+            <tr>
+                <td bgcolor="#ffe6e6"><span style="color:#E73017">{{ item.id }}</span></td>
+                <td bgcolor="#ffe6e6"><span style="color:#E73017">{{ item.result.0 }}</span></td>
+                <td bgcolor="#ffe6e6"><span style="color:#E73017">{{ item.result.1 }}</span></td>
+            </tr>
+            {% else %}
+            <tr>
+                <td bgcolor="#dff5df"><span style="color:#14B120">{{ item.id }}</span></td>
+                <td bgcolor="#dff5df"><span style="color:#14B120">{{ item.result.0 }}</span></td>
+                <td bgcolor="#dff5df"><span style="color:#14B120">{{ item.result.1 }}</span></td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    {% endif %}
 </div>
 {% endblock %}

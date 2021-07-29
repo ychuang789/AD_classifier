@@ -26,12 +26,15 @@ parser.add_argument('--loss_func', default= nn.CrossEntropyLoss())
 
 args = parser.parse_args()
 
-
 def model_run(args):
     hf_logging.set_verbosity_error()
     logging.basicConfig(filename='./model/run.log',
                         format='%(asctime)s - %(levelname)s - %(message)s',level=logging.INFO)
+    logging.debug('\n')
+    logging.debug('\n')
     logging.info(' *** This is run {} *** '.format(args.run_number))
+    for arg, value in sorted(vars(args).items()):
+        logging.info("Argument {0}: {1}".format(arg, value))
 
     device = args.device
     model = ADClassifier(args.n_classes).to(device)
@@ -75,8 +78,9 @@ def model_run(args):
             best_accuracy = val_acc
 
 
-    logging.info(' ========== Well done, the training is over ========== ')
-    logging.info('\n')
+    logging.info(' *** Well done, the training is over *** ')
+    logging.debug('\n')
+    logging.debug('\n')
     report = evalute_metrics(model, test_data_loader, './model/run/best_model_state_{}.bin'.format(args.run_number), device)
     return report
 
@@ -87,6 +91,6 @@ def write_result(report, args):
 
 if __name__ == '__main__':
     report = model_run(args)
-    write_result(report)
+    write_result(report, args)
 
 

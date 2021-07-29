@@ -27,7 +27,7 @@ wheels/
 *.egg
 MANIFEST
 tmp.py
-run.bat
+*.bat
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
