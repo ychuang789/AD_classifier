@@ -2,10 +2,10 @@ import torch
 from torch.nn import Softmax
 from transformers import AlbertTokenizer
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-def get_predictions(model, data_loader):
-    model.load_state_dict(torch.load('best_model_state.bin'))
+def get_predictions(model, data_loader, path, device):
+    model.load_state_dict(torch.load(path))
     model = model.eval()
     review_texts = []
     predictions = []
@@ -29,12 +29,12 @@ def get_predictions(model, data_loader):
     return review_texts, predictions, prediction_probability, real_values
 
 
-def single_prediction(model, sentence):
+def single_prediction(model, sentence, path, max_len, device):
     tokenizer = AlbertTokenizer.from_pretrained('./model/tokenizer/')
-    model.load_state_dict(torch.load('best_model_state.bin'))
+    model.load_state_dict(torch.load(path))
     encoding = tokenizer.encode_plus(sentence,
           add_special_tokens=True,
-          max_length=300,
+          max_length=max_len,
           return_token_type_ids=False,
           padding='max_length',
           return_attention_mask=True,

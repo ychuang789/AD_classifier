@@ -37,15 +37,24 @@ async def index(request: Request):
     return templates.TemplateResponse('index.html', context={'request': request, 'result': result})
 
 @app.post("/predict")
-async def from_post(request: Request, content: str = Form(...)) :
+async def from_post(request: Request, content: str = Form(...), number: int = Form(...)) :
 
-    score, label = single_prediction(model, content)
-    prediction = {0:'negative', 1:'positive'}
-    result = prediction[label]
-    return templates.TemplateResponse('index.html', context={'request': request,
-                                                            'content': content,
-                                                            'result': result,
-                                                            'probability': score})
+    if len(content.splitlines()) != number:
+        result = "The number of articles does not match the input value, please retry again..."
+        return templates.TemplateResponse('index.html', context={'request': request, 'result': result})
+    else:
+        score = []
+        label = []
+        prediction = {0:'negative', 1:'positive'}
+
+
+        for sentence in content.splitlines():
+            score.append(single_prediction(model, sentence)[0])
+            label.append(prediction[single_prediction(model, sentence)[1]])
+
+        results = [{'id':idx+1, 'result':item} for idx, item in enumerate([[i,j] for i,j in zip(label,score)])]
+        return templates.TemplateResponse('index.html', context={'request': request,
+                                                                'results': results})
 
 
 if __name__ == '__main__':
