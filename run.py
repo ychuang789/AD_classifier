@@ -30,8 +30,7 @@ def model_run(args):
     hf_logging.set_verbosity_error()
     logging.basicConfig(filename='./model/run.log',
                         format='%(asctime)s - %(levelname)s - %(message)s',level=logging.INFO)
-    logging.debug('\n')
-    logging.debug('\n')
+    logging.info('\n')
     logging.info(' *** This is run {} *** '.format(args.run_number))
     for arg, value in sorted(vars(args).items()):
         logging.info("Argument {0}: {1}".format(arg, value))
@@ -79,8 +78,8 @@ def model_run(args):
 
 
     logging.info(' *** Well done, the training is over *** ')
-    logging.debug('\n')
-    logging.debug('\n')
+    logging.info('\n')
+
     report = evalute_metrics(model, test_data_loader, './model/run/best_model_state_{}.bin'.format(args.run_number), device)
     return report
 

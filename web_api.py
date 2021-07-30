@@ -1,6 +1,5 @@
 import os
 import torch
-import logging
 
 import uvicorn
 from fastapi import FastAPI, Request, Form
@@ -16,7 +15,6 @@ from train.predict import single_prediction
 
 
 hf_logging.set_verbosity_error()
-logging.basicConfig()
 
 os.environ['CUDA_VISIBLE_DEVICES'] = ""
 os.environ['BEST_MODEL'] = "best_model_state.bin"
