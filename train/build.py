@@ -76,17 +76,6 @@ def build_dataset_object(filename, MAX_LEN, BATCH_SIZE):
     return train_df, test_df, train_data_loader, test_data_loader
 
 
-# def read_prediction_data(text):
-#     text = list(data.text)
-#     train_texts, test_texts, train_labels, test_labels = train_test_split(text, label, test_size=.2)
-#
-#     train = {'text': train_texts, 'label': train_labels}
-#     test = {'text': test_texts, 'label': test_labels}
-#
-#     train_df = DataFrame(train)
-#     test_df = DataFrame(test)
-#
-#     return train_df, test_df
 
 
 

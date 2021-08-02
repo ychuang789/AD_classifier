@@ -51,7 +51,5 @@ def single_prediction(model, sentence, path, max_len, device):
     _, preds = torch.max(outputs, dim=1)
     return round(float(probs.data[0]),4), int(preds.data[0])
 
-    # tokenize_input = tokenizer.tokenize(sentence)
-    # tensor_input = torch.tensor([tokenizer.convert_tokens_to_ids(tokenize_input)])
 
 

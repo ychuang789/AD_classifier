@@ -17,7 +17,7 @@ from train.predict import single_prediction
 hf_logging.set_verbosity_error()
 
 os.environ['CUDA_VISIBLE_DEVICES'] = ""
-os.environ['BEST_MODEL'] = "best_model_state.bin"
+os.environ['BEST_MODEL'] = "/model/run/best_model_state_22.bin"
 
 class Settings(BaseSettings):
     device: str = 'cpu'
