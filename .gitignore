@@ -118,7 +118,7 @@ dmypy.json
 .pyre/
 
 # output test file
-/click_output
+/click_output/*.csv
 
 # model export eval file
 /model/run/*.bin
