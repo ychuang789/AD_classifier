@@ -1,4 +1,5 @@
 click
+fastapi
 pandas
 pip-tools
 PyMySQL
@@ -7,3 +8,4 @@ sklearn
 torch
 tqdm
 transformers
+uvicorn

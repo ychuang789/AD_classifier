@@ -2,7 +2,6 @@ import os
 import click
 import torch
 import pandas as pd
-from datetime import datetime
 from transformers import logging as hf_logging
 from train.model import ADClassifier
 from train.predict import single_prediction
@@ -16,7 +15,7 @@ def cli():
 
 @click.command()
 @click.argument('device', default= torch.device("cuda:0" if torch.cuda.is_available() else "cpu"))
-@click.argument('best_model', default= '/model/run/best_model_state_22.bin')
+@click.argument('best_model', default= './model/run/best_model_state_22.bin')
 @click.argument('max_len', default=300)
 @click.option('--sentence', prompt='please type your content here', help='This is a string that indicate what you want to classify')
 def single(sentence, device, best_model, max_len):
@@ -36,7 +35,7 @@ def single(sentence, device, best_model, max_len):
 
 @click.command()
 @click.argument('device', default= torch.device("cuda:0" if torch.cuda.is_available() else "cpu"))
-@click.argument('best_model', default= '/model/run/best_model_state_22.bin')
+@click.argument('best_model', default= './model/run/best_model_state_22.bin')
 @click.argument('max_len', default=300)
 @click.option('--path', required=True, prompt='please type your filepath here (support txt file with string format)')
 # @click.option('--output_name', type= str,required=True, prompt='please name the output file...')

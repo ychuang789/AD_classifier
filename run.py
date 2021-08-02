@@ -14,6 +14,7 @@ from train.model import ADClassifier
 from train.train import train_epoch
 
 
+os.environ['CUDA_VISIBLE_DEVICES'] = ""
 
 parser = argparse.ArgumentParser()
 parser.add_argument('run_number', type=int, help= 'run number')
