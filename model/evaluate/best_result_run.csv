@@ -1,0 +1,20 @@
+run 22,,,,,,,
+,precision,recall,f1-score,support,,parameter,value
+0,0.953,0.837,0.891,49,,device, cpu
+1,0.860,0.961,0.907,51,,n_classes,2
+accuracy,0.900,0.900,0.900,0.900,,epochs,10
+macro avg,0.907,0.899,0.899,100,,batch_size,16
+weighted avg,0.906,0.900,0.900,100,,learning_rate,1.00E-05
+,,,,,,max_len,300
+,,,,,,loss_func, CrossEntropyLoss
+,,,,,,,
+,,,,,,,
+run 33,,,,,,,
+,precision,recall,f1-score,support,,parameter,value
+0,0.979,0.836,0.902,55,,device,cpu
+1,0.830,0.978,0.898,45,,n_classes,2
+accuracy,0.900,0.900,0.900,0.900,,epochs,10
+macro avg,0.904,0.907,0.900,100,,batch_size,32
+weighted avg,0.912,0.900,0.900,100,,learning_rate,5.00E-06
+,,,,,,max_len,300
+,,,,,,loss_func, CrossEntropyLoss
