@@ -57,7 +57,7 @@ def file(path, device, best_model, max_len):
 
         df = pd.DataFrame(list(zip(lines, label, score)), columns= ['content', 'label', 'probability'])
         output_name = click.prompt('Please enter the output filename', type=str)
-        df.to_csv('./model/{}.csv'.format(output_name), index= False, encoding= 'utf-8-sig')
+        df.to_csv('./model/cli_output/{}.csv'.format(output_name), index= False, encoding= 'utf-8-sig')
         click.echo('Job done!')
     except:
         click.echo('No such file or wrong format (support txt file with string format) please re-check the file!!')

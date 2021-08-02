@@ -121,4 +121,4 @@ dmypy.json
 /click_output/*.csv
 
 # model export eval file
-/model/run/*.bin
+*.bin

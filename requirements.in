@@ -1,11 +1,13 @@
 click
 fastapi
+jinja2
 pandas
 pip-tools
 PyMySQL
+python-multipart
 sentencepiece
 sklearn
 torch
 tqdm
 transformers
-uvicorn
+uvicorn[standard]
