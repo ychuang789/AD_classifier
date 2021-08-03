@@ -122,3 +122,7 @@ dmypy.json
 
 # model export eval file
 *.bin
+
+# scrap file
+/scrap_file/*.csv
+/scrap_file/*.xlsx
