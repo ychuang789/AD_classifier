@@ -46,29 +46,26 @@ async def index(request: Request):
     return templates.TemplateResponse('index.html', context={'request': request, 'results': results})
 
 @app.post("/predict")
-async def from_post(request: Request, content: str = Form(...), number: int = Form(...)) :
+async def from_post(request: Request, content: str = Form(...)) :
+    score = []
+    label = []
+    prediction = {0:'negative', 1:'positive'}
 
-    if len(content.splitlines()) != number:
-        results = "Number cannot match contents!! Please retry again..."
-        return templates.TemplateResponse('index.html', context={'request': request, 'results': results})
-    else:
-        score = []
-        label = []
-        prediction = {0:'negative', 1:'positive'}
+    number = 'You input {} text contents, the results of them: '.format(len(content.splitlines()))
 
-        for sentence in content.splitlines():
-            score.append(single_prediction(model, sentence,
-                                           settings.best_model,
-                                           settings.max_len,
-                                           torch.device(settings.device))[0])
+    for sentence in content.splitlines():
+        score.append(single_prediction(model, sentence,
+                                       settings.best_model,
+                                       settings.max_len,
+                                       torch.device(settings.device))[0])
 
-            label.append(prediction[single_prediction(model, sentence,
-                                                      settings.best_model,
-                                                      settings.max_len,
-                                                      torch.device(settings.device))[1]])
+        label.append(prediction[single_prediction(model, sentence,
+                                                  settings.best_model,
+                                                  settings.max_len,
+                                                  torch.device(settings.device))[1]])
 
-        results = [{'id':idx+1, 'result':item} for idx, item in enumerate([[i,j] for i,j in zip(label,score)])]
-        return templates.TemplateResponse('index.html', context={'request': request, 'results': results})
+    results = [{'id':idx+1, 'result':item} for idx, item in enumerate([[i,j] for i,j in zip(label,score)])]
+    return templates.TemplateResponse('index.html', context={'request': request, 'results': results, 'number': number})
 
 
 if __name__ == '__main__':

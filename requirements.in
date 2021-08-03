@@ -1,6 +1,7 @@
 click
 fastapi
 jinja2
+openpyxl
 pandas
 pip-tools
 PyMySQL

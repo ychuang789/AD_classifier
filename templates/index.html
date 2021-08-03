@@ -12,15 +12,15 @@
         <form method="POST">
             <textarea name="content" style="width:600px;height:300px;" placeholder="Type here, change line (press ENTER) if you want to add new content..." required></textarea>
             <br>
-            <input type="number" placeholder="The number of contents..." name="number" id="number" autocomplete="off" required>
             <input type="submit" value="Submit">
             <input type="reset" value="Reset">
         </form>
     </div>
 
     {% if results is string %}
-        <b><div class="msg" style="text-align: center">{{ results }}</div></b>
+    <b><div class="msg" style="text-align: center">{{ results }}</div></b>
     {% else %}
+    <b><div class="msg" style="text-align: center">{{ number }}</div></b>
     <table>
         <tr>
             <th bgcolor="#c9c9c9">Id</th>
