@@ -239,9 +239,9 @@ $ python click_classifier.py file
 
 example:
 
-<img src="pics\cli1.png">
+<img src="pics/cli1.png">
 
-<img src="pics\cli2.png">
+<img src="pics/cli2.png">
 
 | content                                                      | label    | probability |
 | ------------------------------------------------------------ | -------- | ----------- |
@@ -273,7 +273,7 @@ Type the content which you want to classify and press `ENTER` if you want to add
 <!-- ROADMAP -->
 ## Roadmap
 
-<img src="pics\rdmap.png">
+<img src="pics/rdmap.png">
 
 
 
