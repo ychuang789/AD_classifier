@@ -38,14 +38,15 @@
     <img src="pics/noun_web app_1760714.png" alt="Logo" width="100" height="100">
   </a>
   <h3 align="center">Advertisement Content Classifier</h3>
-<p style="text-align: center">
+<p align="center">
     The main contribution of this project is to build a Command-Line Interface and Web applications that can classify the advertisement content.</p>
-<p style="text-align: center">
+<p align="center">
     <br />
     <a href="https://github.com/ychuang789/AD_classifier/tree/master"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ychuang789/AD_classifier/blob/master/AD_classifier.pptx">View Slides</a>
+    <a href="https://github.com/ychuang789/AD_classifier/blob/master/AD_classifier.pdf">View Slides</a>
+
 
 
 
@@ -201,9 +202,10 @@ $ python run.py 1 --data data.pkl --device cpu\
 	--batch_size 16 --epochs 10 --learning_rate 1e-5
 ```
 
-Track training and validation information at  `/model/run.log` ; check the output classification report at `/model/evaluate/` 
-
-You can find out the best model for each run in the `/model/run/`
++ Track training and validation information at  `/model/run.log` 
++ Check the output classification report at `/model/evaluate/` 
++ You can find out the best model for each run in the `/model/run/`
++ False predict detail is stored at `/model/false_predict/`
 
 ### CLI application
 
