@@ -34,7 +34,7 @@
 <br />
 
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/ychuang789/AD_classifier/tree/master">
     <img src="pics/noun_web app_1760714.png" alt="Logo" width="100" height="100">
   </a>
   <h3 align="center">Advertisement Content Classifier</h3>
@@ -46,6 +46,7 @@
     <br />
     <br />
     <a href="https://github.com/ychuang789/AD_classifier/blob/master/AD_classifier.pdf">View Slides</a>
+
 
 
 
