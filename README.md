@@ -31,15 +31,17 @@
     <img src="pics/noun_web app_1760714.png" alt="Logo" width="100" height="100">
   </a>
   <h3 align="center">Advertisement Content Classifier</h3>
+</p>
 <p align="center">
-    The main contribution of this project is to build a Command-Line Interface and Web applications that can classify the advertisement content.</p>
+    The main contribution of this project is to build a Command-Line Interface and Web applications that can classify the advertisement content.
+</p>
 <p align="center">
     <br />
     <a href="https://github.com/ychuang789/AD_classifier/tree/master"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/ychuang789/AD_classifier/blob/master/AD_classifier.pdf">View Slides</a>
-
+</p>
 
 
 
