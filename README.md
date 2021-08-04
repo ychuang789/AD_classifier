@@ -115,6 +115,10 @@ Others important content of advertisement copywriting also include,
 
 ### Project work flow
 
+<img src="pics/workflow.png">
+
+
+
 The project contains <u>three</u> parts of efforts, that is classifier training, **Command line interface (CLI)** application and **WEB** application building. 
 
 + In first step, we introduce the pre-trained language model, **albert**, from [huggingface transformers](https://huggingface.co/transformers/) and created a simple classifier with [pytorch](https://pytorch.org/). 
