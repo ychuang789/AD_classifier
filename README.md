@@ -26,20 +26,22 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<p align="center">
+<p style="text-align=center">
   <a href="https://github.com/ychuang789/AD_classifier/tree/master">
     <img src="pics/noun_web app_1760714.png" alt="Logo" width="100" height="100">
   </a>
   <h3 align="center">Advertisement Content Classifier</h3>
+</p>
 <p align="center">
-    The main contribution of this project is to build a Command-Line Interface and Web applications that can classify the advertisement content.</p>
+    The main contribution of this project is to build a Command-Line Interface and Web applications that can classify the advertisement content.
+</p>
 <p align="center">
     <br />
     <a href="https://github.com/ychuang789/AD_classifier/tree/master"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/ychuang789/AD_classifier/blob/master/AD_classifier.pdf">View Slides</a>
-
+</p>
 
 
 
@@ -92,7 +94,7 @@
 
 <img src="pics/api5.png" style="zoom:75%;" />
 
-<img src="pics\CLI.png" style="zoom:67%;" />
+<img src="pics/CLI.png" style="zoom:67%;" />
 
 
 
@@ -327,9 +329,9 @@ $ python click_classifier.py file
 
 example:
 
-<img src="pics\cli1.png">
+<img src="pics/cli1.png">
 
-<img src="pics\cli2.png">
+<img src="pics/cli2.png">
 
 | content                                                      | label    | probability |
 | ------------------------------------------------------------ | -------- | ----------- |
@@ -350,9 +352,9 @@ and open the browser with http://127.0.0.1:8000 to open the WEB application
 
 Type the content which you want to classify and press `ENTER` if you want to add new content. The result will be showed at the bottom of the text area with **id** represent each content, **label** and **probability**. 
 
-<img src="pics\WEB1.png" style="zoom:110%;" />
+<img src="pics/WEB1.png" style="zoom:110%;" />
 
-<img src="pics\WEB2.png" style="zoom:110%;" />
+<img src="pics/WEB2.png" style="zoom:110%;" />
 
 
 
@@ -361,7 +363,7 @@ Type the content which you want to classify and press `ENTER` if you want to add
 <!-- ROADMAP -->
 ## Roadmap
 
-<img src="pics\rdmap.png">
+<img src="pics/rdmap.png">
 
 
 
