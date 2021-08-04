@@ -14,12 +14,11 @@ from train.model import ADClassifier
 from train.train import train_epoch
 
 
-os.environ['CUDA_VISIBLE_DEVICES'] = ""
-
 parser = argparse.ArgumentParser()
 parser.add_argument('run_number', type=int, help= 'run number')
-parser.add_argument('--device',default= torch.device("cuda:0" if torch.cuda.is_available() else "cpu"),
-                    help= 'gpu number or cpu')
+parser.add_argument('--data', default= 'data.pkl', help= 'data path')
+parser.add_argument('--device', default= "cpu",
+                    help= 'default is cpu, input gpu number (cuda:number) or cpu')
 parser.add_argument('--n_classes', default= 2, help= 'number of class')
 parser.add_argument('--max_len', type= int, default= 300, help= 'max length')
 parser.add_argument('--batch_size', type= int, default= 16, help= 'batch size')
@@ -36,15 +35,17 @@ def model_run(args):
                         format='%(asctime)s - %(levelname)s - %(message)s',level=logging.INFO)
     logging.info('\n')
     logging.info(' *** This is run {} *** '.format(args.run_number))
+
+    device = torch.device(args.device)
+
     for arg, value in sorted(vars(args).items()):
         logging.info("Argument {0}: {1}".format(arg, value))
 
-    device = args.device
     model = ADClassifier(args.n_classes).to(device)
 
     logging.info(' >>> Tokenizing and building the data loader ... ')
     try:
-        train_df, test_df, train_data_loader, test_data_loader = build_dataset_object('data.pkl',
+        train_df, test_df, train_data_loader, test_data_loader = build_dataset_object(args.data,
                                                                                       args.max_len,
                                                                                       args.batch_size)
     except:
