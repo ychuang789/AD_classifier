@@ -126,3 +126,8 @@ dmypy.json
 # scrap file
 /scrap_file/*.csv
 /scrap_file/*.xlsx
+
+# model generate file
+/model/cli_output/*.csv
+/model/evaluate/*.csv
+/model/false_predict/*.csv

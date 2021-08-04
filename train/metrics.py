@@ -8,7 +8,7 @@ def evalute_metrics(model, test_data_loader, path, device):
     false_prediction = [['text', 'label', 'predict']]
     for i in range(len(y_pred)):
         if y_pred[i] != y_test[i]:
-            false_prediction.append([y_review_texts[i], y_test[i], y_pred[i]])
+            false_prediction.append([y_review_texts[i], int(y_test[i]), int(y_pred[i])])
         else:
             continue
 
