@@ -85,16 +85,20 @@ def model_run(args):
     logging.info(' *** Well done, the training is over *** ')
     logging.info('\n')
 
-    report = evalute_metrics(model, test_data_loader, './model/run/best_model_state_{}.bin'.format(args.run_number), device)
-    return report
+    report, false_prediction_df = evalute_metrics(model, test_data_loader, './model/run/best_model_state_{}.bin'.format(args.run_number), device)
+    return report, false_prediction_df
 
 def write_result(report, args):
     df = pd.DataFrame(report).transpose()
     df.to_csv('./model/evaluate/classification_report_{}.csv'.format(args.run_number))
 
+def output_false_pred(false_prediction_df, args):
+    false_prediction_df.to_csv('./model/false_predict/false_predict_{}'.format(args.run_number))
+
 
 if __name__ == '__main__':
-    report = model_run(args)
+    report, false_prediction_df = model_run(args)
     write_result(report, args)
+    output_false_pred(false_prediction_df, args)
 
 
