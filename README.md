@@ -92,7 +92,7 @@
 
 <img src="pics/api5.png" style="zoom:75%;" />
 
-<img src="pics\CLI.png" style="zoom:67%;" />
+<img src="pics/CLI.png" style="zoom:67%;" />
 
 
 
@@ -262,9 +262,9 @@ and open the browser with http://127.0.0.1:8000 to open the WEB application
 
 Type the content which you want to classify and press `ENTER` if you want to add new content. The result will be showed at the bottom of the text area with **id** represent each content, **label** and **probability**. 
 
-<img src="pics\WEB1.png" style="zoom:110%;" />
+<img src="pics/WEB1.png" style="zoom:110%;" />
 
-<img src="pics\WEB2.png" style="zoom:110%;" />
+<img src="pics/WEB2.png" style="zoom:110%;" />
 
 
 
