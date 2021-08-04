@@ -26,7 +26,7 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<p align="center">
+<p style="text-align=center">
   <a href="https://github.com/ychuang789/AD_classifier/tree/master">
     <img src="pics/noun_web app_1760714.png" alt="Logo" width="100" height="100">
   </a>
