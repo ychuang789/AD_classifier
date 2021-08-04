@@ -90,9 +90,5 @@ if __name__ == "__main__":
         print(len(result))
 
         result.to_csv("./scrap_file/{0}_{1}.csv".format(relative_func.__name__, len(result)), encoding='utf-8-sig', index=None)
-        # with open("data_{0}.json".format(len(result)), "w", encoding='utf8') as file:
-        #     json.dump(result, file, default=str, ensure_ascii=False)
-        # file.close()
-
         func('forum_data', args).close()
         print('the total data extracting time is {0} sec'.format(round(time()-start_time, 3)))

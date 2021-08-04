@@ -74,6 +74,7 @@
     </li>
     <li><a href="#usage">Usage</a>
      <ul>
+        <li><a href="#get-dataset">Get dataset</a></li> 
         <li><a href="#classifier-training">Classifier training</a></li>
         <li><a href="#CLI-application">CLI application</a></li>
         <li><a href="#WEB-application">WEB application</a></li>
@@ -86,6 +87,7 @@
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
+
 
 
 
@@ -177,6 +179,25 @@ This project is built in the python 3.8 environment. Make sure to install the co
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+### Get dataset
+
+run the command to scrap data from database:
+
+```sh
+$set HOST=db host number
+$set DB_USER_ID=db user id
+$set DB_USER_PWD=db password
+
+$python get_data.py 1000 positive
+$python get_data.py 1000 negative
+```
+
++ 1000 means the limit number you want to query the database; positive or negative represent what kind of content you want to scrap from database (AD text or NOT AD text).
+
++ It will return the dataset that contain `title` and `content` of text, noted that you have to check the dataset and create a new column, `label`, to annotate the dataset with 0 and 1 which represent the negative and positive manually by yourself .
+
++ Remember to concatenate the `title` and `content` into one column `text` , and export the output `.pkl` file with columns `text` and `label` if you want to test the next section.
 
 ### Classifier training
 
@@ -282,9 +303,13 @@ Type the content which you want to classify and press `ENTER` if you want to add
 <!-- CONTACT -->
 ## Contact
 
-Weber Yen-Chun Huang - ychuang@eland.com.tw
+Weber Yen-Chun Huang 
 
-Project Link: [AD_classifier](https://github.com/ychuang789/AD_classifier)
+Machine Learning engineer
+
+eLand Information 
+
+Mail: ychuang@eland.com.tw
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
