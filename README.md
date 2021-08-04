@@ -35,7 +35,7 @@
 
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="noun_web app_1760714.png" alt="Logo" width="100" height="100">
+    <img src="pics/noun_web app_1760714.png" alt="Logo" width="100" height="100">
   </a>
   <h3 align="center">Advertisement Content Classifier</h3>
 <p style="text-align: center">
@@ -47,7 +47,8 @@
     <br />
     <a href="https://github.com/ychuang789/AD_classifier/blob/master/AD_classifier.pptx">View Slides</a>
 
-  
+
+
 
 
 <!-- TABLE OF CONTENTS -->
@@ -92,9 +93,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="C:\Users\ychuang\Pictures\Saved Pictures\api5.png" style="zoom:75%;" />
+<img src="pics/api5.png" style="zoom:75%;" />
 
-<img src="C:\Users\ychuang\Pictures\Saved Pictures\Untitled.png" style="zoom:67%;" />
+<img src="pics\CLI.png" style="zoom:67%;" />
 
 
 
@@ -221,9 +222,9 @@ $ python click_classifier.py file
 
 example:
 
-![](C:\Users\ychuang\Pictures\Saved Pictures\cli1.png)
+![](pics\cli1.png)
 
-![](C:\Users\ychuang\Pictures\Saved Pictures\cli2.png)
+![](pics\cli2.png)
 
 | content                                                      | label    | probability |
 | ------------------------------------------------------------ | -------- | ----------- |
@@ -244,9 +245,9 @@ and open the browser with http://127.0.0.1:8000 to open the WEB application
 
 Type the content which you want to classify and press `ENTER` if you want to add new content. The result will be showed at the bottom of the text area with **id** represent each content, **label** and **probability**. 
 
-<img src="C:\Users\ychuang\AppData\Roaming\Typora\typora-user-images\image-20210804093723727.png" alt="image-20210804093723727" style="zoom:110%;" />
+<img src="C:\Users\ychuang\PycharmProjects\AD_classifier\pics\WEB1.png" style="zoom:110%;" />
 
-<img src="C:\Users\ychuang\AppData\Roaming\Typora\typora-user-images\image-20210804093612423.png" alt="image-20210804093612423" style="zoom:110%;" />
+<img src="C:\Users\ychuang\PycharmProjects\AD_classifier\pics\WEB2.png" style="zoom:110%;" />
 
 
 
@@ -255,7 +256,7 @@ Type the content which you want to classify and press `ENTER` if you want to add
 <!-- ROADMAP -->
 ## Roadmap
 
-![image-20210804102053944](C:\Users\ychuang\AppData\Roaming\Typora\typora-user-images\image-20210804102053944.png)
+![](C:\Users\ychuang\PycharmProjects\AD_classifier\pics\rdmap.png)
 
 
 
