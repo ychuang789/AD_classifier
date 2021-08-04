@@ -10,7 +10,7 @@ def get_text(args):
     df = pd.read_excel(args.path, header= 0)
     df['text'] = df['title'] + df['content']
 
-    with open('predict.txt', 'w') as f:
+    with open('test_100.txt', 'w') as f:
         for i in df['text'].astype(str):
             f.write(i+'\n')
         f.close()
