@@ -222,9 +222,9 @@ $ python click_classifier.py file
 
 example:
 
-![](pics\cli1.png)
+<img src="pics\cli1.png">
 
-![](pics\cli2.png)
+<img src="pics\cli2.png">
 
 | content                                                      | label    | probability |
 | ------------------------------------------------------------ | -------- | ----------- |
@@ -245,9 +245,9 @@ and open the browser with http://127.0.0.1:8000 to open the WEB application
 
 Type the content which you want to classify and press `ENTER` if you want to add new content. The result will be showed at the bottom of the text area with **id** represent each content, **label** and **probability**. 
 
-<img src="C:\Users\ychuang\PycharmProjects\AD_classifier\pics\WEB1.png" style="zoom:110%;" />
+<img src="pics\WEB1.png" style="zoom:110%;" />
 
-<img src="C:\Users\ychuang\PycharmProjects\AD_classifier\pics\WEB2.png" style="zoom:110%;" />
+<img src="pics\WEB2.png" style="zoom:110%;" />
 
 
 
@@ -256,7 +256,7 @@ Type the content which you want to classify and press `ENTER` if you want to add
 <!-- ROADMAP -->
 ## Roadmap
 
-![](C:\Users\ychuang\PycharmProjects\AD_classifier\pics\rdmap.png)
+<img src="pics\rdmap.png">
 
 
 
